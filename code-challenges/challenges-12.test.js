@@ -6,9 +6,8 @@ CHALLENGE 1 - Review
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
-const replaceZeros = (string) => {
-  return string.replace(/0/gm, 'zero');
-};
+const replaceZeros = (string) => string.replace(/0/gm, 'zero');
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -18,9 +17,7 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = (pin) => {
-  return /^\d{4}$/.test(pin);
-};
+const validatePin = (pin) => /^(\d{4}|^\d)$/.test(pin);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -30,9 +27,7 @@ Write a function named validateWord that uses a regular expression pattern to va
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validateWord = (word) => {
-  return /^\D{5,10}$/.test(word);
-};
+const validateWord = (word) => /\b[a-zA-Z]{5,10}\b/.test(word);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -42,9 +37,8 @@ Write a function named hasNumber that uses a regular expression pattern to deter
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const hasNumber = (string) => {
-  return /^([a-zA-Z])/.test(string) ? /[0-9]/.test(string) : false;
-};
+const hasNumber = (string) => /[a-zA-Z]+[0-9]+/.test(string);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -61,11 +55,7 @@ Return either true or false.
 
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
-
-const validateEmail = (email) => {
-  return /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(com|org|net)$/.test(email);
-
-};
+const validateEmail = (email) => /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.(com|net|org)$/.test(email);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -89,8 +79,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  return (/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.)\s*(\d+))?$/.test(phoneNumber))
-};
+  return (/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.)\s*(\d+))?$/.test(phoneNumber))};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -102,7 +92,6 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
